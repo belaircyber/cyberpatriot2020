@@ -1,0 +1,55 @@
+
+#EDITING A FILE WITH NANO - CASE Sensitivity MATTERS in LINUX
+#STEP1: OPEN THE FILE
+sudo nano name_of_file
+
+#STEP2: SAVE THE FILE
+ctrl-o
+#Hit enter to confirm writing over the current file.
+
+#STEP3: EXIT THE NANO
+ctrl-x
+
+###ACCOUNT MANAGEMENT
+#Dump accounts on system with status
+passwd -aS
+
+#UNDERSTANDING THE OUTPUT OF passwd -aS
+Display account status information. The status information consists of 7 fields. The first field is the user's login name.
+The second field indicates if the user account has a locked password (L), has no password (NP), or has a usable password (P).
+The third field gives the date of the last password change. The next four fields are the minimum age, maximum age, warning period,
+and inactivity period for the password. These ages are expressed in days.
+
+#SEE ALL USERS ON THE SYSTEM
+getent passwd
+
+#IDENTIFY NORMAL USER ACCOUNTS (Default UID_MIN = 1000 UID_MAX = 6000)
+#STEP1: Dump all NORMAL USERS
+getent passwd {1000..6000}
+
+#IDENTIFY SYSTEM ACCOUNTS (Default UID_MIN = 100 UID_MAX = 999)
+getent passwd {100..999}
+
+#Changing User Login Security Settings
+#1-Password Aging Controls
+#2-Login Retries
+#3-Login Timeout
+sudo nano /etc/login.defs
+
+#DELETE USERS
+sudo userdel -r -f Name_Of_User
+
+#ADD USERS interactively
+sudo adduser Name_of_User
+
+#ADDING A USER TO A SPECIFIC GROUP
+sudo usermod -aG group user
+
+#REMOVE A USER FROM A SPECIFIC GROUP
+sudo gpasswd -d user group
+
+#CREATE A NEW GROUP
+sudo groupadd group
+
+#CREATE NEW GROUP WITH A SPECIFIC GROUP ID
+sudo groupadd -g 1080 group

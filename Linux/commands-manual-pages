@@ -1,0 +1,36 @@
+#WEBSITE FOR LINUX MANUAL PAGES
+https://www.kernel.org/doc/man-pages/
+
+#to download manuals to your computer, open a terminal and enter the following
+git clone http://git.kernel.org/pub/scm/docs/man-pages/man-pages
+
+#UNDERSTAND MANUAL PAGES [8 pages available for a given command if applicable]
+1: User commands; man-pages includes a very few Section 1 pages that document programs supplied by the GNU C library.
+2: System calls documents the system calls provided by the Linux kernel.
+3: Library functions documents the functions provided by the standard C library.
+4: Devices documents details of various devices, most of which reside in /dev.
+5: Files describes various file formats, and includes proc(5), which documents the /proc file system.
+7: Overviews, conventions, and miscellaneous.
+8: Superuser and system administration commands; man-pages includes a very few Section 8 pages that document programs supplied by the GNU C library.
+
+# how to view a manual page for a given command
+#EXAMPLE1 = sudo command manual page
+man sudo_root
+
+#EXAMPLE2 = look at the manual page for ls
+man ls
+
+#UNDERSTAND LINUX COMMAND SYNTAX
+command option(s) Argument
+
+#EXAMPLE1 = Command with no options
+ls
+
+#EXAMPLE2 = Command with 1 option and 1 argument for that option
+ls -l /home
+
+#EXAMPLE3 = Command with 2 options for 1 Argument
+ls -la /home
+
+#EXAMPLE4 = command with multiple arguments and options
+ls -lisa /home /etc
