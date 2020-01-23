@@ -10,6 +10,70 @@ ctrl-o
 #STEP3: EXIT THE NANO
 ctrl-x
 
+#ENABLE UBUNTU DEFAULT SYSTEM REPOSITORY
+#Step1: Open the repository file located at /etc/apt/sources.list
+nano /etc/apt/sources.list
+
+#Step2: remove the ## to enable the described repository - for example
+deb http://us.archive.ubuntu.com/ubuntu/ trusty main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ trusty main restricted
+
+#UPDATE AND UPGRADE THE SYSTEM FROM REPOSITORY
+sudo apt-get -y update
+sudo apt-get -y upgrade
+
+#Disable root
+#Step1: Open the passwd file as sudo
+sudo no /etc/passwd
+
+#Step2: Edit root's line from
+root:x:0:0:root:/root:/bin/bash
+to
+root:x:0:0:root:/root:/sbin/nologin
+
+#Step3: Save File and EXIT
+CTRL-O
+CTRL-X
+
+#Step4: Disable root
+sudo passwd -l root
+
+#DISLAY ALL SERVICES AND THEIR CURRENT STATUS
+sudo initctl list
+
+#STOP A SERVICE
+#OPTION1:
+sudo service name_of_Service stop
+#OPTION2:
+sudo initctl stop name_of_Service
+
+#START A SERVICE
+#OPTION1:
+sudo service name_of_Service start
+#OPTION2:
+sudo initctl start name_of_Service
+
+#VIEW ALL PROCESSES
+#best option is to install htop
+sudo apt-get install htop
+sudo htop
+
+#OPTION1:
+sudo top
+#OPTION2:
+sudo ps aux
+#OPTION3:
+sudo pstree -aps
+
+#TO STOP A PROCESS
+sudo kill -9 PID_NUMBER
+
+#TO VIEW ALL LISTENING NETWORK SOCKETS
+sudo netstat -plunt
+
+#TO VIEW ALL NETWORK CONNECTIONS TCP/UDP with process ID and service without name resolution
+sudo netstat -patun
+
 ###ACCOUNT MANAGEMENT
 #Dump accounts on system with status
 passwd -aS
@@ -55,4 +119,5 @@ sudo groupadd group
 #CREATE NEW GROUP WITH A SPECIFIC GROUP ID
 sudo groupadd -g 1080 group
 
-#Change everyones Password
+#Change a users Password
+sudo passwd Name_of_User
