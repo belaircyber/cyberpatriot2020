@@ -1,0 +1,31 @@
+Unit 7 Practical Exercise
+Instructions: Open the Unit 7 Lesson Plan.  Review slides 1-9.
+Starting with slide 10,  check the Virtual Machine (VM) for
+security compliance.  Make changes as required.  For each change
+made, make a change log to track the changes and to receive credit
+for the scoring.
+
+Slide 10 - Local Security Policy - Password Policies
+Slide 11 - Local Security Policy - Account Lockout Policy
+Slide 12-13 - Windows Defender Security Center & Anti-Malware
+  Real-Time protection needs to be set to ON
+Slide 14-18 - Firewall & Firewall Exceptions
+  Windows Defender must be turned ON for Domain, Private, & Public
+  Allow SSH through the Firewall
+  Allow an App through the Firewall [Windows Remote Management]
+Slide 19 - Windows Update - Make sure to check for updates
+Slide 21 to 33 - Users and Groups
+  Configure snap-ons MMC
+  Check which groups the users are in
+  Ensure the only users in the "Administrators" group are "ted.bowman" and "falconcyber"
+  Create a new group named "Falcon Cyber"
+  Add the following users to the "Falcon Cyber" Groups
+    falconcyber
+    ted.bowman
+    sgt.j
+    pettyo.kevin
+  Disable the "Guest" account if it is enabled
+  Set a new password for all users that meets security complexity requirements
+  Create a new user named "Your.Name"
+  Add the new user to the "Administrators" Group
+  Remove the "badguy.hacker" Account
